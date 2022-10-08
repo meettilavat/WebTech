@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Third</title>
+  <style>
+    html, body {
+      height: 100%;
+      color: #A5C9CA;
+    }
+
+    html {
+      display: table;
+      margin: auto;
+    }
+
+    body {
+      background-color: #2C3333;
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 1em;
+    }
+
+    table {
+      text-align: center;
+    }
+
+    .btn {
+      width: 15vw;
+      height: 5vh;
+      color: #A5C9CA;
+      background-color: transparent;
+      border: 0.2vh solid #E7F6F2;
+      border-top: 0.1vh solid #E7F6F2;
+      border-radius: 0.5vh;
+      transition: all 0.5s ease;
+    }
+
+    .btn:hover {
+      color: #2C3333;
+      background-color: #E7F6F2;
+    }
+    table {
+      border-spacing: 0 5vh;
+    }
+  </style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>
+      <button onclick="alert('This is an alert')" class="btn">Alert</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button onclick="confirm('confirm')" class="btn">Confirm</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button onclick="prompt('Enter prompt')" class="btn">Prompt</button>
+    </td>
+  </tr>
+</table>
+
+<script>
+
+</script>
+</body>
+</html>
