@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        .btn {
+            width: 15vw;
+            height: 5vh;
+            color: #A5C9CA;
+            background-color: transparent;
+            border: 0.2vh solid #E7F6F2;
+            border-top: 0.1vh solid #E7F6F2;
+            border-radius: 0.5vh;
+	        transition: all 0.5s ease;
+        }
+
+        .btn:hover {
+	        color: #2C3333;
+	        background-color: #E7F6F2;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+            background-color: #2C3333;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        table {
+	        text-align: center;
+        }
+
+        #bulb {
+	        height: 380px;
+        }
+	</style>
+</head>
+<body>
+
+<table border="1">
+	<tr id="bulb">
+		<td colspan="2">
+			<img alt="Image of a bulb" height="180" id="myImage" src="pic_bulboff.gif" width="100">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<button class="btn" id="btn1" onclick="changeImage()">Turn On</button>
+		</td>
+		<td>
+			<button class="btn" id="btn2" onclick="changeSize()">Increase Size</button>
+		</td>
+	</tr>
+</table>
+
+<script>
+    let image = document.getElementById('myImage');
+    let btn1 = document.getElementById('btn1');
+    let btn2 = document.getElementById('btn2');
+
+    function changeImage() {
+        if (image.src.match("bulbon")) {
+            btn1.textContent = "Turn On";
+            image.src = "pic_bulboff.gif";
+        } else {
+            btn1.textContent = "Turn Off";
+            image.src = "pic_bulbon.gif";
+        }
+    }
+
+    function changeSize() {
+        if (image.height === 360) {
+            btn2.textContent = "Increase Size";
+            image.height = "180";
+            image.width = "100";
+        } else {
+            btn2.textContent = "Decrease Size";
+            image.height = "360";
+            image.width = "200";
+        }
+    }
+</script>
+</body>
+</html>

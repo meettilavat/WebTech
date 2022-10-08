@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    html, body {
+      height: 100%;
+      color: #A5C9CA;
+    }
+
+    html {
+      display: table;
+      margin: auto;
+    }
+
+    body {
+      background-color: #2C3333;
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 1em;
+    }
+
+    table {
+      text-align: center;
+    }
+
+    .btn {
+      width: 15vw;
+      height: 5vh;
+      color: #A5C9CA;
+      background-color: transparent;
+      border: 0.2vh solid #E7F6F2;
+      border-top: 0.1vh solid #E7F6F2;
+      border-radius: 0.5vh;
+      transition: all 0.5s ease;
+    }
+
+    .btn:hover {
+      color: #2C3333;
+      background-color: #E7F6F2;
+    }
+
+    #textcont {
+      height: 25vh;
+    }
+  </style>
+</head>
+<body>
+
+<table>
+  <tr id="textcont">
+    <td colspan="2">
+      <p id="text">This is a test text</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="btn" id="bold" onclick="bold()">Bold</button>
+    </td>
+    <td>
+      <button class="btn" id="italics" onclick="italics()">Italic</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input onchange="changeColor()" id="color" type="color" value="#A5C9CA">
+    </td>
+    <td>
+      <input onchange="changeFont()" type="number" id="num" value="18" min="18" max="36">
+    </td>
+  </tr>
+  <tr>
+    <td>Change Color</td>
+    <td>Increase Font</td>
+  </tr>
+</table>
+
+<script>
+  let text = document.getElementById('text');
+  let clr = document.getElementById('color');
+  let num = document.getElementById("num");
+  let ita = document.getElementById('italics');
+  let bld = document.getElementById('bold');
+
+  function bold() {
+    if (text.style.fontWeight === "bold") {
+      bld.textContent = "Bold";
+      text.style.fontWeight = "normal";
+    } else {
+      bld.textContent = "Normal";
+      text.style.fontWeight = "bold"
+    }
+  }
+
+  function italics() {
+    if (text.style.fontStyle === "italic") {
+      ita.textContent = "Italic";
+      text.style.fontStyle = "normal";
+    } else {
+      ita.textContent = "Normal";
+      text.style.fontStyle = "italic"
+    }
+  }
+
+  function changeColor() {
+    text.style.color = clr.value;
+  }
+
+  function changeFont() {
+    console.log(num.value);
+    text.style.fontSize = num.value + "px";
+  }
+
+</script>
+</body>
+</html>
